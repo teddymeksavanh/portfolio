@@ -1,3 +1,5 @@
 local
 node_modules/
 .idea/
+.meteor/
+simple-todos/.meteor/
