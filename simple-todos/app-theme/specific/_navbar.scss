@@ -1,10 +1,13 @@
 .portfolio-navbar{
+  background-color:$primary-blue;
+
   a{
-    color:#292929;
+    font-size:11px;
+    color:#ffffff;
     opacity:.7;
   }
 
-  .active a, li:hover a{
+  .active a, li:hover a, li:active a{
     opacity:1;
     font-weight:600;
     background-color:transparent;
