@@ -76,25 +76,25 @@ Template.home.onCreated(() => {
             jQuery(document).on("keydown", function (event) {
 
                 if (event.keyCode == 40) {
-                    if(i>=nbSection)
-                        i=nbSection;
-                    else
+                    if (i >= nbSection){
+                        i = nbSection;
+                    }else{
                         i++;
-                    console.log("Key Down Pressed");
+                        scroll.scrollToAnchor(jQuery("#section"+i));
+                    }
 
                     jQuery('.home-keyboard-down').css('opacity', 1);
                     setTimeout(function(){
                         jQuery('.home-keyboard-down').css('opacity', .7);
                     }, 200);
 
-                    scroll.scrollToAnchor(jQuery("#section"+i));
                 } else if (event.keyCode == 38) {
-                    if(i<=1)
-                        i=1;
-                    else
+                    if(i<=1) {
+                        i = 1;
+                    }else {
                         i--;
-                    console.log("Key Up Pressed");
-                    scroll.scrollToAnchor(jQuery("#section"+i));
+                        scroll.scrollToAnchor(jQuery("#section"+i));
+                    }
                     jQuery('.home-keyboard-up').css('opacity', 1);
                     setTimeout(function(){
                         jQuery('.home-keyboard-up').css('opacity', .7);
@@ -107,7 +107,7 @@ Template.home.onCreated(() => {
         },
         keyboardImageChange : function(){
             if(jQuery(window).scrollTop() > 50){
-               
+
             }
         }
     };
