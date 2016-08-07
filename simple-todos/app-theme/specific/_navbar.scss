@@ -1,5 +1,5 @@
 .portfolio-navbar{
-  background-color:$primary-blue;
+  background-color:$primary-color;
 
   a{
     font-size:11px;
@@ -7,7 +7,7 @@
     opacity:.7;
   }
 
-  .active a, li:hover a, li:active a{
+  .active a, li:hover a, li:active a, li:focus a{
     opacity:1;
     font-weight:600;
     background-color:transparent;
@@ -16,6 +16,11 @@
 
 .portfolio-toggle{
   padding:4px 10px;
+  opacity:.7;
+
+  &:hover{
+    opacity:1;
+  }
 
   img{
     vertical-align:middle;

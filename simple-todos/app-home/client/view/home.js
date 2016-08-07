@@ -1,31 +1,56 @@
 Template.home.onCreated(() => {
     "use strict";
 
-    window.addEventListener('load', function load(){
-        window.removeEventListener('load', load, false);
-        navbar.init();
-        scroll.init();
-    });
-
     var navbar = {
         init : function(){
-            navbar.setNavbar();
+            navbar.setNavbarA();
+            navbar.setNavbarLi();
+            navbar.setNavbarCollapse();
+            navbar.setNavbarToggle();
+
+            navbar.toggleOpacity();
             navbar.isActive();
         },
         //Setter
-        setNavbar : function(){
-            this._navbar = jQuery('.portfolio-navbar');
+        setNavbarToggle : function(){
+            this._navbarToggle = jQuery('.portfolio-toggle');
+        },
+        setNavbarA : function(){
+            this._navbarA = jQuery('.portfolio-navbar li a');
+        },
+        setNavbarCollapse : function(){
+            this._navbarCollapse = jQuery('.navbar-collapse');
+        },
+        setNavbarLi : function(){
+            this._navbarLi = jQuery('.portfolio-navbar li');
         },
         //Getter
-        getNavbar : function(){
-            return this._navbar;
+        getNavbarToggle : function(){
+            return this._navbarToggle;
+        },
+        getNavbarCollapse : function(){
+            return this._navbarCollapse;
+        },
+        getNavbarA : function(){
+            return this._navbarA;
+        },
+        getNavbarLi : function(){
+            return this._navbarLi;
         },
         isActive : function(){
-            navbar.getNavbar().find('li a').click(function(e){
-                navbar.getNavbar().find('li').removeClass('active');
-                var thisParent = jQuery(this).parent();
+            navbar.getNavbarA().click(function(e){
+                navbar.getNavbarLi().removeClass('active');
+                var thisParent = jQuery(e.currentTarget).parent();
                 if(!thisParent.hasClass('active'))
                     thisParent.addClass('active');
+            });
+        },
+        toggleOpacity: function(){
+            navbar.getNavbarToggle().click(function(){
+                if(!navbar.getNavbarCollapse().hasClass('in'))
+                    navbar.getNavbarToggle().css('opacity', 1);
+                else
+                    navbar.getNavbarToggle().css('opacity', .7);
             });
         }
     };
@@ -69,4 +94,7 @@ Template.home.onCreated(() => {
             jQuery('html,body').animate({scrollTop: selector.offset().top},'slow');
         }
     };
+
+    navbar.init();
+    scroll.init();
 });
