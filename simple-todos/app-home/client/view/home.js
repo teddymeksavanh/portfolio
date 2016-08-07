@@ -5,8 +5,8 @@ Template.home.onCreated(() => {
 
         if (event.keyCode == 40) {
             i++;
-            if(i > 3)
-                i = 3;
+            if(i > 4)
+                i = 4;
             scrollToAnchor($("#section"+i));
         } else if (event.keyCode == 38) {
             i--;
