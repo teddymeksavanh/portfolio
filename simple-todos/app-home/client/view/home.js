@@ -54,18 +54,18 @@ Template.home.onCreated(() => {
                         i=nbSection;
                     else
                         i++;
-                    navbar.scrollToAnchor(jQuery("#section"+i));
+                    scroll.scrollToAnchor(jQuery("#section"+i));
                 } else if (event.keyCode == 38) {
                     if(i<=1)
                         i=1;
                     else
                         i--;
                     event.preventDefault();
-                    navbar.scrollToAnchor(jQuery("#section"+i));
+                    scroll.scrollToAnchor(jQuery("#section"+i));
                 }
             });
         },
-        scrollToAnchor : function(selectr){
+        scrollToAnchor : function(selector){
             jQuery('html,body').animate({scrollTop: selector.offset().top},'slow');
         }
     };
