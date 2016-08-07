@@ -1,6 +1,13 @@
 .portfolio-navbar{
   a{
     color:#292929;
+    opacity:.7;
+  }
+
+  .active a, li:hover a{
+    opacity:1;
+    font-weight:600;
+    background-color:transparent;
   }
 }
 

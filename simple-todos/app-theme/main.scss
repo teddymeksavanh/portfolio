@@ -2,9 +2,16 @@
 @import "base/base";
 
 // Modules
+@import "modules/size";
+@import "modules/position";
+@import "modules/image";
 
 // Specific
 @import "specific/navbar";
+@import "specific/home";
+@import "specific/about";
+@import "specific/projects";
+@import "specific/contact";
 
 // Third-party
 @import "third-party/animate";
