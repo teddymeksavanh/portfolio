@@ -57,12 +57,26 @@ Template.home.onCreated(() => {
 
     var scroll = {
         init : function(){
+            scroll.setUp();
+            scroll.setDown();
+
             scroll.defaultTop();
             scroll.goToSection(4);
         },
         //Setter
-
+        setUp : function(){
+            this._up = jQuery('.home-keyboard-up');
+        },
+        setDown : function(){
+            this._down = jQuery('.home-keyboard-down');
+        },
         //Getter
+        getUp : function(){
+            return this._up;
+        },
+        getDown : function(){
+            return this._down;
+        },
 
         defaultTop : function(){
             jQuery(window).on('beforeunload', function() {
@@ -79,13 +93,23 @@ Template.home.onCreated(() => {
                         i=nbSection;
                     else
                         i++;
+                    console.log("Key Down Pressed");
+                    console.log("Selector", scroll.getDown());
+                    scroll.getDown().css('opacity', 1);
+                    setTimeout(function(){
+                        scroll.getDown().css('opacity', .7);
+                    },1000);
                     scroll.scrollToAnchor(jQuery("#section"+i));
                 } else if (event.keyCode == 38) {
                     if(i<=1)
                         i=1;
                     else
                         i--;
-                    event.preventDefault();
+                    console.log("Key Up Pressed");
+                    scroll.getUp().css('opacity', 1);
+                    setTimeout(function(){
+                        scroll.getUp().css('opacity', .7);
+                    },1000);
                     scroll.scrollToAnchor(jQuery("#section"+i));
                 }
             });

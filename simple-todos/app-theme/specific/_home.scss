@@ -6,4 +6,25 @@
 .home-title-wrapper{
   text-align:center;
 }
+
+.home-keyboard-wrapper{
+  position:fixed;
+  bottom:0;
+  left:0;
+
+  .home-keyboard{
+    margin: 0 0 15px 0;
+    .home-keyboard-up{
+      opacity: .7;
+    }
+    .home-keyboard-down{
+      opacity: .7;
+    }
+    img{
+      margin:2px;
+      height:50px;
+      width:50px;
+    }
+  }
+}
 /* Fin première section */
