@@ -1,6 +1,18 @@
 /* Première section*/
 .home-section{
   background-color:$primary-color;
+  color:#ffffff;
+}
+
+.home-title{
+  text-transform:uppercase;
+  display:block;
+  font-size:35px;
+}
+
+.home-subtitle{
+  display:block;
+  opacity:.7;
 }
 
 .home-title-wrapper{
