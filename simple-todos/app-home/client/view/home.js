@@ -5,6 +5,7 @@ Template.home.onRendered(()=>{
         init : function(){
             myCarousel.setHomeCarousel();
             myCarousel.setHomeNavbar();
+            myCarousel.setHomeCarouselItem();
 
             myCarousel.size();
             myCarousel.resize();
@@ -12,17 +13,24 @@ Template.home.onRendered(()=>{
         setHomeCarousel : function(){
             this._homeCarousel = jQuery('.home-carousel');
         },
+        setHomeCarouselItem : function(){
+            this._homeCarouselItem = jQuery('.home-carousel .item');
+        },
         setHomeNavbar : function(){
             this._homeNavbar = jQuery('.home-navbar');
         },
         getHomeCarousel : function(){
             return this._homeCarousel;
         },
+        getHomeCarouselItem : function(){
+            return this._homeCarouselItem;
+        },
         getHomeNavbar : function(){
             return this._homeNavbar;
         },
         size: function(){
             myCarousel.getHomeCarousel().css('height', jQuery(window).height() - myCarousel.getHomeNavbar().height());
+            myCarousel.getHomeCarouselItem().css('height', jQuery(window).height() - myCarousel.getHomeNavbar().height());
         },
         resize: function(){
             $(window).on("resize", function(){
