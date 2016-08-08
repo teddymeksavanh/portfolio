@@ -28,6 +28,11 @@ Router.route('/contact', function () {
     this.render('contact');
 });
 
+Router.route('/cv', function () {
+    this.render('cv');
+});
+
+
 
 
 
