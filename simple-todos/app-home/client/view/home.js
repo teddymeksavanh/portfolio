@@ -1,7 +1,41 @@
-Template.home.onCreated(() => {
+Template.home.onRendered(()=>{
     "use strict";
 
-    jQuery('.home-carousel').css('height', jQuery(window).height() - jQuery('.home-navbar').height());
+    var myCarousel = {
+        init : function(){
+            myCarousel.setHomeCarousel();
+            myCarousel.setHomeNavbar();
+
+            myCarousel.size();
+            myCarousel.resize();
+        },
+        setHomeCarousel : function(){
+            this._homeCarousel = jQuery('.home-carousel');
+        },
+        setHomeNavbar : function(){
+            this._homeNavbar = jQuery('.home-navbar');
+        },
+        getHomeCarousel : function(){
+            return this._homeCarousel;
+        },
+        getHomeNavbar : function(){
+            return this._homeNavbar;
+        },
+        size: function(){
+            myCarousel.getHomeCarousel().css('height', jQuery(window).height() - myCarousel.getHomeNavbar().height());
+        },
+        resize: function(){
+            $(window).on("resize", function(){
+                myCarousel.size();
+            });
+        }
+    };
+
+    myCarousel.init();
+});
+
+Template.home.onCreated(() => {
+    "use strict";
 
     var navbar = {
         init : function(){
