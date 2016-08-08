@@ -106,9 +106,11 @@ Template.home.onCreated(() => {
             jQuery('html,body').animate({scrollTop: selector.offset().top},'slow');
         },
         keyboardImageChange : function(){
-            if(jQuery(window).scrollTop() > 50){
-
-            }
+            jQuery(window).scroll(function() {
+                if (jQuery(window).scrollTop() > 50) {
+                    
+                }
+            });
         }
     };
 
