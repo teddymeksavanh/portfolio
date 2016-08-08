@@ -9,6 +9,7 @@ Template.home.onRendered(()=>{
 
             myCarousel.size();
             myCarousel.resize();
+            myCarousel.showControl();
         },
         setHomeCarousel : function(){
             this._homeCarousel = jQuery('.home-carousel');
@@ -35,6 +36,13 @@ Template.home.onRendered(()=>{
         resize: function(){
             $(window).on("resize", function(){
                 myCarousel.size();
+            });
+        },
+        showControl : function(){
+            myCarousel.getHomeCarousel().hover(function(){
+                jQuery('.carousel-control span').removeClass('hidden');
+            }, function(){
+                jQuery('.carousel-control span').addClass('hidden');
             });
         }
     };
