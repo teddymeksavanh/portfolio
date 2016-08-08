@@ -107,9 +107,8 @@ Template.home.onCreated(() => {
         },
         keyboardImageChange : function(){
             jQuery(window).scroll(function() {
-                if (jQuery(window).scrollTop() > 50 && jQuery(window).scrollTop() < 100) {
+                if(jQuery(window).scrollTop() > 80) {
                     jQuery('.home-keyboard-down').attr('src', '/icon/keyboard-down-black.png');
-                }else if(jQuery(window).scrollTop() > 100){
                     jQuery('.home-keyboard-up').attr('src', '/icon/keyboard-up-black.png');
                 }else{
                     jQuery('.home-keyboard-up').attr('src', '/icon/keyboard-up-white.png');
