@@ -1,6 +1,8 @@
 Template.home.onCreated(() => {
     "use strict";
 
+    jQuery('.home-carousel').css('height', jQuery(window).height() - jQuery('.home-navbar').height());
+
     var navbar = {
         init : function(){
             navbar.setNavbarA();
