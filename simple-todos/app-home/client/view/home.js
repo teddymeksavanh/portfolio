@@ -30,8 +30,8 @@ Template.home.onRendered(()=>{
             return this._homeNavbar;
         },
         size: function(){
-            myCarousel.getHomeCarousel().css('height', jQuery(window).height() - myCarousel.getHomeNavbar().height());
-            myCarousel.getHomeCarouselItem().css('height', jQuery(window).height() - myCarousel.getHomeNavbar().height());
+            myCarousel.getHomeCarousel().css('height', jQuery(window).height() - myCarousel.getHomeNavbar().height() + 5);
+            myCarousel.getHomeCarouselItem().css('height', jQuery(window).height() - myCarousel.getHomeNavbar().height() + 5);
         },
         resize: function(){
             $(window).on("resize", function(){
